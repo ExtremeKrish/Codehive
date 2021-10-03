@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head
+>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.2.0/styles/stackoverflow-light.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.2.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="trial.css">
+<script src="trial.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Merienda|Slabo+27px" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title></title>
+<style type="text/css">
+body{
+	margin:0;
+    font-family: "Poppins",sans-serif;
+    overflow:hidden;
+    height:100vh;
+    -webkit-tap-highlight-color: transparent;
+}
+.toolbar {
+	padding:16px;
+background:#4595D4;
+	font-weight:500;
+	font-size:18px;
+	color:white;
+	height:60px;
+}
+.search-box button
+{   cursor:pointer ;
+    outline:none;
+    border-width: 5px;
+    border-color:#2196f3; 
+    height:50px;    width:120px;
+    background:transparent;
+    color:#fff;
+    font-size:22px;
+    margin:2px 10px 10px 2px;
+    border-radius:12px;
+    font-family: 'Slabo 27px', serif;
+    box-shadow:0 1px 3px rgba(0,0,0,0.12), 0 3px 5px rgba(0,0,0,0.3);
+}
+.search-box
+{   position: relative;
+    display:block;
+    height:62px;
+    width:86vw;
+    max-width: 600px;
+    margin:0 auto;
+    background-color:#fff;
+    border-radius:30px;
+    transform:translateY(-50%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.title{
+height:62px;
+width:86vw;
+margin:0 auto;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius:30px;
+    display:flex;
+align-items:center;
+padding-left:24px;
+transform:translateX(-3.5vw);
+text-overflow:ellipsis;
+overflow:none;
+white-space:nowrap;
+margin-top:56px;
+}
+#keyword
+{
+    font-family: "Poppins",sans-serif;
+    background:none;
+    border:none;
+    color:#4d4d4d;
+    height:62px;
+    width: 100%;
+    margin-left: 1em;
+    font-size:16px;
+    outline:none;
+}
+#btn
+{   position: absolute;
+    top: 4px;
+    right: 4px;
+background:#4595D4;
+    color:#fff;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    border-radius:50%;
+    text-align: center;
+    padding:15px;
+    transition:.7 ease;
+}
+#btn-copy
+{   position: absolute;
+    top: 4px;
+    right: 4px;
+background:#4595D4;
+    color:#fff;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    border-radius:50%;
+    text-align: center;
+    padding:15px;
+    transition:.7 ease;
+}
+ul {
+	margin:0;
+	padding:0;
+	height:100%;
+	overflow:hidden auto;
+background:transparent;
+white-space:nowrap;
+
+}
+li {
+	width:86vw;
+    border-radius:30px;
+	list-style:none;
+	background:#fff;
+	margin:16px auto;
+	padding:16px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
+}
+.title span{
+text-overflow:ellipsis;
+overflow:hidden;
+padding-right:60px;
+
+}
+.pop{
+position:fixed;
+height:100vh;
+width:100vw;
+top:0;
+left:0;
+background:white;
+padding:3.5vw;
+display:none;
+}
+
+pre{
+font-size:13px;
+line-height:1.30769;
+background-color:#fff;
+border-radius:10px;
+max-height:300px;
+margin:20px auto 0 auto;
+padding:12px;
+overflow-wrap:normal;
+overflow:auto;
+width:86vw;
+transform:translateX(-3.5vw);
+box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
+}
+pre::-webkit-scrollbar{
+width:10px;
+height:10px;
+background-color:transparent;
+}
+
+pre::-webkit-scrollbar-thumb{
+border-radius:10px;
+background-color:#c5c5c5;
+}
+
+pre::-webkit-scrollbar-corner {
+/*
+background-image: url(resources/corner.png);
+background-repeat: no-repeat;
+*/
+background-color:transparent;
+}
+#fab{
+position:fixed;
+bottom:20px;
+right:20px;
+	box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 24px;
+padding:12px 18px 12px 18px;
+background:#4595D4;
+border-radius:30px;
+color:white;
+font-weight:500;
+}
+
+.toolbar2 {
+height:56px;
+padding:0px;
+align-items:center;
+padding-left:12px;
+display:flex;
+position:absolute;
+top:0;
+width:100vw;
+background:transparent;
+	box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 24px;
+	right:0;
+	left:0;
+	overflow:hidden;
+	color:#4d4d4d;
+	font-weight:600;
+	
+}
+.pointer{
+cursor:pointer;
+
+}
+ul span{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+</style>
+</head>
+<body>
+<div class="toolbar" >Codehive</div>
+<div class="search-box">
+        <input type="text" id="keyword" autocomplete="off" placeholder="Type to search" />
+        <div id="btn" onclick="search()">
+            <i class="fas fa-search"></i>
+        </div>
+</div>
+<ul>
+<span><i>Loading Codes...</i></span>
+</ul>
+<div class="pop" >
+
+<nav class="toolbar2" >
+<svg onclick="document.querySelector('.pop').style.display = 'none'" class="pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-chevron-left" width="32" height="32" viewBox="0 0 24 24" fill="#4d4d4d"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" /></svg>
+&nbsp;Codehive
+
+
+
+</nav>
+
+
+<div id="fab" class="pointer" >Raw</div>
+<div class="title" ><span id="title" ></span><div id="btn-copy" class="pointer" ><i class="fas fa-copy" ></i></div></div>
+<pre id="code"></pre>
+</div>
+<script type="text/javascript">
+var result = document.getElementsByTagName("ul")[0];
+var json;
+var title = document.getElementById("title");
+var code = document.getElementById("code");
+var raw = document.getElementById("fab");
+var copy = document.getElementById("btn-copy");
+var httpRequest = new XMLHttpRequest();
+httpRequest.onreadystatechange = writeContent;
+httpRequest.open("GET", "code.json");
+httpRequest.send();
+
+      
+      function writeContent() {
+
+
+         if(httpRequest.readyState === 4) {
+
+            if(httpRequest.status == 200) {
+               json = httpRequest.responseText;
+               dojson(json);
+
+            } else {
+
+            }
+         }
+      }
+</script>
+<script>
+function dojson(json) {
+
+result.innerHTML="";
+for(var n =0;n<JSON.parse(json).length;n++){
+
+var item = (JSON.parse(json)[n].title).replace('<','&lt;').replace('>','&gt;');
+result.innerHTML+= "<li>"+item+"</li>"
+}
+
+var g = document.querySelector("ul")
+for (var i = 0, len = g.children.length; i < len; i++)
+{
+
+    (function(index){
+        g.children[i].onclick = function(){
+        title.innerText = (JSON.parse(json)[index].title);
+        code.innerText =(JSON.parse(json)[index].code);
+document.querySelector(".pop").style.display ="block";
+        }    
+    })(i);
+
+}
+
+
+
+
+
+
+
+
+
+}
+            
+       
+//for(var n = 0;n<100;n++){
+//	document.getElementsByTagName("ul")[0].innerHTML += "<li>"+n+"</li>"
+//}
+
+hljs.highlightBlock(document.querySelector("pre"));
+hljs.highlightAll();
+
+raw.onclick = function(){
+}
+btn-copy.onclick = function(){
+code.select();
+  code.setSelectionRange(0, 999999999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(code.innerText);
+}
+</script>
+
+</body>
+</html>
